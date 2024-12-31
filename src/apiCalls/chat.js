@@ -2,7 +2,7 @@ import { axiosInstance } from ".";
 
 export const getAllChats = async () => {
     try {
-        const response = await axiosInstance.get('/api/chat/get-all-chats');
+        const response = await axiosInstance.get('https://chat-be-wmal.onrender.com/api/chat/get-all-chats');
         return response.data;
     } catch (error) {
         return error;
@@ -12,7 +12,7 @@ export const getAllChats = async () => {
 
 export const createChat = async (members) => {
     try {
-        const response = await axiosInstance.post('/api/chat/create-new-chat', { members });
+        const response = await axiosInstance.post('https://chat-be-wmal.onrender.com/api/chat/create-new-chat', { members });
         return response.data;
     } catch (error) {
         return error;
@@ -22,7 +22,7 @@ export const createChat = async (members) => {
 
 export const clearUnreadMessageCount = async (chatId) => {
     try {
-        const response = await axiosInstance.post('/api/chat/clear-unread-message', { chatId: chatId });
+        const response = await axiosInstance.post('https://chat-be-wmal.onrender.com/api/chat/clear-unread-message', { chatId: chatId });
         return response.data;
     } catch (error) {
         return error;
